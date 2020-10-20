@@ -30,7 +30,15 @@ class Application
         @@cart << item_term
         resp.write "added #{item_term}"
       else
-        
+        resp.write "We don't have that item"
+      end
+
+    else
+      resp.write "Path Not Found"
+    end
+    resp.finish
+  end
+end
 
   # def handle_search(search_term)
   #   if @@items.include?(search_term)
