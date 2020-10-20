@@ -23,15 +23,17 @@ class Application
       resp.write "Your cart is empty"
     end
 
-  elsif 
-    resp.finish
-  end
+    elsif req.path.match(/add/)
+
+
+      resp.finish
+    end
 
   def handle_search(search_term)
     if @@items.include?(search_term)
       return "#{search_term} is one of our items"
     else
-      return "Couldn't find #{search_term}"
+      return "Path Not Found"
     end
   end
 end
