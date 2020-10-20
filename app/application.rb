@@ -9,7 +9,6 @@ class Application
 
     if req.path.match(/items/)
       @@items.each do |item|
-      @@cart.each do |item|
         resp.write "#{item}\n"
       end
     elsif req.path.match(/search/)
