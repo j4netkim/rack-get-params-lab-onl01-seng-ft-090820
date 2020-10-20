@@ -6,9 +6,9 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.match(/items/)
-      @@items.each do |item|
-        resp.write "#{item}\n"
+    if req.path.match(/cart/)
+      @@items.each do |cart|
+        resp.write "#{cart}\n"
       end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
@@ -21,7 +21,7 @@ class Application
   end
 
   def handle_search(search_term)
-    if @@items.include?(search_term)
+    if @@cart.include?(search_term)
       return "#{search_term} is one of our items"
     else
       return "Couldn't find #{search_term}"
