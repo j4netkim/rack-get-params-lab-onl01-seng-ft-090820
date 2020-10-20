@@ -29,7 +29,8 @@ class Application
       if @@items.include?(item_term)
         @@cart << item_term
         resp.write "added #{item_term}"
-    end
+      else
+        
 
   # def handle_search(search_term)
   #   if @@items.include?(search_term)
