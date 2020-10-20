@@ -26,12 +26,12 @@ class Application
     elsif req.path.match(/add/)
 
 
-      resp.finish
+      # resp.finish
     end
 
-  def handle_search(search_term)
-    if @@items.include?(search_term)
-      return "#{search_term} is one of our items"
+  # def handle_search(search_term)
+  #   if @@items.include?(search_term)
+  #     return "#{search_term} is one of our items"
     else
       return "Path Not Found"
     end
